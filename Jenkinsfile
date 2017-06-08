@@ -1,6 +1,7 @@
 pipeline {
+  agent label:""
   tools {
-  nodejs "LTS"
+    nodejs "LTS"
   }
 
   stages {
