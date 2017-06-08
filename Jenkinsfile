@@ -16,6 +16,7 @@ pipeline {
 
         stage('3rd party analysis'){
           steps{
+            echo 'start analysis'
             sh 'grunt retire'
             sh 'license-checker --production > licenses-production.txt'
                     archiveArtifacts 'licenses-production.txt'
@@ -27,6 +28,7 @@ pipeline {
         stage('Build') {
           steps{
             echo 'started build..'
+            sh 'grunt jshint'
           }
         }
         stage('Integration Testing') {

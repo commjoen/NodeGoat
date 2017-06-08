@@ -4,7 +4,7 @@ var exec = require("child_process").exec;
 
 var JS_FILES = ["Gruntfile.js", "app/assets/js/**", "config/config.js",
   "app/data/**/*.js",
-  "app/routes/**/*.js", "server.js", "test/**/*.js"
+  "app/routes/**/*.js", "server.js"
 ];
 
 

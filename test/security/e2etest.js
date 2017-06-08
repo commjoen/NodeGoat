@@ -69,7 +69,7 @@ test.describe("The RetirEasy app ", function() {
       tagName: "button",
       type: "submit"
     }).click();
-    assert(webDriver.get)
+    assert(webDriver.get);
     webDriver.sleep(1000);
     webDriver.getCurrentUrl().should.eventually.endWith("dashboard");
     webDriver.findElement(By.id("logout-menu-link")).click();
@@ -88,7 +88,7 @@ test.describe("The RetirEasy app ", function() {
       tagName: "button",
       type: "submit"
     }).click();
-    assert(webDriver.get)
+    assert(webDriver.get);
     webDriver.sleep(1000);
     webDriver.findElement(By.id("contributions-menu-link")).click();
     webDriver.sleep(1000);
@@ -115,7 +115,7 @@ test.describe("The RetirEasy app ", function() {
     webDriver.findElement(By.name("email")).sendKeys("test@info2.nl");
     webDriver.findElement(By.className("btn-primary")).click();
 
-    assert(webDriver.get)
+    assert(webDriver.get);
     webDriver.sleep(1000);
     webDriver.findElement(By.id("logout-menu-link")).isDisplayed();
 
