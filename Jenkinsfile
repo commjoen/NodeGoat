@@ -5,6 +5,9 @@ pipeline {
         stage('PreBuild') {
           steps{
             echo 'started prebuild..'
+            sh 'npm install'
+            sh 'npm --version'
+            sh 'node --version'
           }
 
         }
