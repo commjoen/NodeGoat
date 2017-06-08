@@ -30,7 +30,7 @@ pipeline {
           steps{
             echo 'started build..'
             sh 'grunt jshint'
-            sh 'npm start'
+            sh 'npm start > stdout.txt 2> stderr.txt & '
           }
         }
         stage('Integration Testing') {

@@ -135,6 +135,9 @@ module.exports = function(grunt) {
       unit: {
         src: ["test/unit/*.js"],
       },
+      end2end: {
+        src: ["test/end2end/*.js"]
+      },
       security: {
         src: ["test/security/*.js"]
       }
