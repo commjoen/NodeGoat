@@ -11,6 +11,11 @@ pipeline {
             sh 'npm install'
             sh 'npm --version'
             sh 'node --version'
+            sh 'grunt retire'
+            sh 'license-checker --production > licenses-production.txt'
+                    archiveArtifacts 'licenses-production.txt' 
+            sh 'license-checker --development > licenses-development.txt'
+                    archiveArtifacts 'licenses-development.txt'
           }
 
         }
