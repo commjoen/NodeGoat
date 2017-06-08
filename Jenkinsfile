@@ -1,5 +1,6 @@
 pipeline {
   tools {
+  nodejs "LTS"
   }
 
   stages {
