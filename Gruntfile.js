@@ -10,7 +10,6 @@ var JS_FILES = ["Gruntfile.js", "app/assets/js/**", "config/config.js",
 
 module.exports = function(grunt) {
   // Project Configuration
-  grunt.loadNpmTasks('grunt-mocha');
   grunt.initConfig({
     pkg: grunt.file.readJSON("package.json"),
     watch: {
@@ -172,7 +171,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks("grunt-retire"); // run as: grunt retire
   grunt.loadNpmTasks("grunt-if");
   grunt.loadNpmTasks("grunt-npm-install");
-
+  grunt.loadNpmTasks('grunt-mocha');
   // Making grunt default to force in order not to break the project.
   grunt.option("force", true);
 
