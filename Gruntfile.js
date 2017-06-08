@@ -10,6 +10,7 @@ var JS_FILES = ["Gruntfile.js", "app/assets/js/**", "config/config.js",
 
 module.exports = function(grunt) {
   // Project Configuration
+  grunt.loadNpmTasks('grunt-mocha');
   grunt.initConfig({
     pkg: grunt.file.readJSON("package.json"),
     watch: {
