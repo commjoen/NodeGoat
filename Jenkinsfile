@@ -36,8 +36,9 @@ pipeline {
         stage('Integration Testing') {
           steps{
             echo 'started integration testing..'
-            sh 'npm install chromedriver'
-            sh 'grunt mochaTest:security'
+            //sh 'npm install chromedriver'
+            sh 'npm install grunt-mocha --save-dev'
+            sh 'grunt mochaTest:end2end'
             sh 'curl http://192.168.1.195:9000/OTHER/core/other/htmlreport/?apikey=dvarh87o132g62dtdst0d5ide7 > secproxy.html'
               archiveArtifacts 'secproxy.html'
             sh 'curl http://192.168.1.195:9000/OTHER/core/other/xmlreport/?apikey=dvarh87o132g62dtdst0d5ide7 > /secproxy.xml'
