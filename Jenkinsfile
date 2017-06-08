@@ -11,6 +11,7 @@ pipeline {
             sh 'npm install'
             sh 'npm --version'
             sh 'node --version'
+            sh 'npm run db:seed'
           }
         }
 
@@ -29,11 +30,13 @@ pipeline {
           steps{
             echo 'started build..'
             sh 'grunt jshint'
+            sh 'npm start'
           }
         }
         stage('Integration Testing') {
           steps{
             echo 'started integration testing..'
+            sh 'grunt mochaTest:security'
           }
         }
 
