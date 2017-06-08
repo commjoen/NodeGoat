@@ -36,6 +36,7 @@ pipeline {
         stage('Integration Testing') {
           steps{
             echo 'started integration testing..'
+            sh 'npm install chromedriver'
             sh 'grunt mochaTest:security'
           }
         }
