@@ -2,7 +2,7 @@ pipeline {
   agent any
 
   tools {
-    nodejs "nodejs8"
+    nodejs "nodejs8grunt"
   }
   stages {
         stage('PreBuild') {
