@@ -5,18 +5,27 @@ pipeline {
 
   stages {
         stage('PreBuild') {
-          echo 'started prebuild..'
+          steps{
+            echo 'started prebuild..'
+          }
+
         }
 
         stage('Build') {
-          echo 'started build..'
+          steps{
+            echo 'started build..'
+          }
         }
         stage('Integration Testing') {
-          echo 'started integration testing..'
+          steps{
+            echo 'started integration testing..'
+          }
         }
 
         stage('ZAP-test') {
-          echo 'started zaptesting..'
+          steps{
+            echo 'started zaptesting..'
+          }
         }
 
         stage('Clean-up') {
