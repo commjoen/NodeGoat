@@ -24,4 +24,5 @@ pipeline {
                 echo 'Cleaning..'
             }
         }
+   }
 }
