@@ -19,7 +19,8 @@ pipeline {
         stage('3rd party analysis'){
           steps{
             echo 'start analysis'
-            sh 'grunt retire'
+            sh 'retire --exitwith 0  --outputpath 3rdparty-analysis.txt'
+              archiveArtifacts '3rdparty-analysis.txt'
             sh 'license-checker --production > licenses-production.txt'
                     archiveArtifacts 'licenses-production.txt'
             sh 'license-checker --development > licenses-development.txt'
