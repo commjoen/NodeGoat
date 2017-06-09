@@ -40,6 +40,7 @@ pipeline {
             echo 'started integration testing..'
             //sh 'npm install chromedriver'
             sh 'npm install grunt-mocha --save-dev'
+            sh 'npm install chromedriver'
             sh 'grunt mochaTest:end2end'
             sh 'curl ${ZAPADDRESS}/OTHER/core/other/htmlreport/?apikey=dvarh87o132g62dtdst0d5ide7 > secproxy.html'
               archiveArtifacts 'secproxy.html'
