@@ -254,9 +254,7 @@ test.describe(zapTargetAppRoute + " regression test suite", function() {
                         scanId +
                         " is " +
                         statusValue +
-                        "% complete with " +
-                        numberOfAlerts +
-                        " alerts."
+                        "% complete."
                       );
                     });
                 });
