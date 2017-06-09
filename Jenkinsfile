@@ -12,7 +12,7 @@ pipeline {
             sh 'npm --version'
             sh 'node --version'
             sh 'npm run db:seed'
-            def ZAPADDRESS = 'http://192.168.1.195:9000'
+            sh 'export ZAPADDRESS = http://192.168.1.195:9000'
           }
         }
 
