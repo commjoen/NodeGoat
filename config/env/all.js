@@ -6,5 +6,5 @@ module.exports = {
   cookieSecret: "session_cookie_secret_key_here",
   cryptoKey: "a_secure_key_for_crypto_here",
   cryptoAlgo: "aes256",
-  hostName: "192.168.1.195"
+  hostName: "localhost"
 };
