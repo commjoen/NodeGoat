@@ -171,7 +171,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks("grunt-retire"); // run as: grunt retire
   grunt.loadNpmTasks("grunt-if");
   grunt.loadNpmTasks("grunt-npm-install");
-  grunt.loadNpmTasks('grunt-mocha');
   // Making grunt default to force in order not to break the project.
   grunt.option("force", true);
 
