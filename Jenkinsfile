@@ -12,6 +12,7 @@ pipeline {
             sh 'npm --version'
             sh 'node --version'
             sh 'npm run db:seed'
+            def ZAPADDRESS = 'http://192.168.1.195:9000'
           }
         }
 
@@ -39,9 +40,9 @@ pipeline {
             //sh 'npm install chromedriver'
             sh 'npm install grunt-mocha --save-dev'
             sh 'grunt mochaTest:end2end'
-            sh 'curl http://192.168.1.195:9000/OTHER/core/other/htmlreport/?apikey=dvarh87o132g62dtdst0d5ide7 > secproxy.html'
+            sh 'curl ${ZAPADDRESS}/OTHER/core/other/htmlreport/?apikey=dvarh87o132g62dtdst0d5ide7 > secproxy.html'
               archiveArtifacts 'secproxy.html'
-            sh 'curl http://192.168.1.195:9000/OTHER/core/other/xmlreport/?apikey=dvarh87o132g62dtdst0d5ide7 > /secproxy.xml'
+            sh 'curl ${ZAPADDRESS}/OTHER/core/other/xmlreport/?apikey=dvarh87o132g62dtdst0d5ide7 > /secproxy.xml'
               archiveArtifacts 'secproxy.xml'
             //sh 'curl --insecure -H "Accept: application/json" -X POST --form "file=@./secproxy.xml" "https://192.168.99.100:8443/threadfix/rest/applications/1/upload?apiKey={Ja9yE6ZaUYHesgC5fyqoCV4zB43iIuwLrMxqCXtaG8}"' specific application.
           }
