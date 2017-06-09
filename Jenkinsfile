@@ -52,7 +52,7 @@ pipeline {
         stage('docker evaluation') {
           steps{
             echo 'analyzing with clair...'
-
+            
           }
         }
 
