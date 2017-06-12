@@ -3,7 +3,7 @@ pipeline {
 
   tools {
     nodejs "nodejs8grunt"
-    docker "latest"
+    org.jenkinsci.plugins.docker.commons.tools.DockerTool "latest"
   }
   stages {
         stage('PreBuild') {
