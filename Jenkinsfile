@@ -2,7 +2,8 @@ pipeline {
   agent any
 
   tools {
-    nodejs "nodejs8grunt"
+    nodejs "nodejs8grunt",
+    docker "latest"
   }
   stages {
         stage('PreBuild') {
@@ -45,7 +46,7 @@ pipeline {
               archiveArtifacts 'secproxy.html'
             sh 'curl http://192.168.136.27:9000/OTHER/core/other/xmlreport/?apikey=dvarh87o132g62dtdst0d5ide7 > secproxy.xml'
               archiveArtifacts 'secproxy.xml'
-            sh 'curl '
+            //sh 'curl '
             //sh 'curl --insecure -H "Accept: application/json" -X POST --form "file=@./secproxy.xml" "https://192.168.99.100:8443/threadfix/rest/applications/1/upload?apiKey={Ja9yE6ZaUYHesgC5fyqoCV4zB43iIuwLrMxqCXtaG8}"' specific application.
           }
         }
