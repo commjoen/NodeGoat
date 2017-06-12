@@ -2,7 +2,7 @@ pipeline {
   agent any
 
   tools {
-    nodejs "nodejs8grunt",
+    nodejs "nodejs8grunt"
     docker "latest"
   }
   stages {
