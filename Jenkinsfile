@@ -5,7 +5,7 @@ pipeline {
     nodejs "nodejs8grunt"
   }
   stages {
-        stage('PreBuild') {
+        stage('Build') {
           steps{
             echo 'started prebuild..'
             sh 'npm install'
@@ -27,7 +27,7 @@ pipeline {
           }
         }
 
-        stage('Build') {
+        stage('Run') {
           steps{
             echo 'started build..'
             sh 'grunt jshint'
