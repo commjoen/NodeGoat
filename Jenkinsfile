@@ -38,7 +38,7 @@ pipeline {
         stage('docker evaluation') {
           steps{
             echo 'analyzing with clair...'
-            sh 'cd clair && .clair-scanner nodegoat_web  example-whitelist.yaml http://192.168.1.132:6060 192.168.1.132 >clair-result.txt'
+            sh 'cd clair-scanner && ./clair-scanner nodegoat_web  example-whitelist.yaml http://192.168.1.132:6060 192.168.1.132 >clair-result.txt'
               archiveArtifacts 'clair-result.txt'
           }
         }
