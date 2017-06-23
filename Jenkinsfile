@@ -31,16 +31,9 @@ pipeline {
         stage('Run') {
           steps{
             echo 'started build..'
+            sh 'npm install grunt-mocha --save-dev'
             sh 'grunt jshint'
             sh 'npm start > stdout.txt 2> stderr.txt & '
-          }
-        }
-
-        stage('docker evaluation') {
-          steps{
-            echo 'analyzing with clair...'
-            sh 'cd clair-scanner && ls && ./clair-scanner_linux_386 nodegoat_web example-whitelist.yaml http://192.168.1.132:6060 192.168.1.132 >clair-result.txt'
-              archiveArtifacts 'clair-result.txt'
           }
         }
 
@@ -60,12 +53,24 @@ pipeline {
           }
         }
 
+
         stage('ZAP-test') {
           steps{
             echo 'started zaptesting..'
 
           }
         }
+
+
+        stage('docker evaluation') {
+          steps{
+            echo 'analyzing with clair...'
+            sh 'cd clair-scanner && ls && ./clair-scanner_linux_386 nodegoat_web example-whitelist.yaml http://192.168.1.132:6060 192.168.1.132 >clair-result.txt'
+              archiveArtifacts 'clair-result.txt'
+          }
+        }
+
+
 
         stage('Clean-up') {
             steps {
