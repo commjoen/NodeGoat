@@ -32,8 +32,8 @@
   "scripts": {
     "start": "node server.js",
     "test": "node node_modules/grunt-cli/bin/grunt test",
-    "test:e2e": "node node_moduiles/grunt-cli/bin/grunt mochaTest:end2end",
-    "test:security": "node node_moduiles/grunt-cli/bin/grunt mochaTest:security",
+    "test:e2e": "node node_modules/grunt-cli/bin/grunt mochaTest:end2end",
+    "test:security": "node node_modules/grunt-cli/bin/grunt mochaTest:security",
     "db:seed": "grunt db-reset",
     "precommit": "grunt precommit"
   },
